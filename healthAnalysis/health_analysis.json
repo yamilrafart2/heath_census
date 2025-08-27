@@ -1,55 +1,55 @@
 {
     "conditions": [
       {
-        "name": "Thyroid",
-        "imagesrc":"/imgs/diabeties.jpg",
+        "name": "Tiroides",
+        "imagesrc":"./imgs/thyroid.jpg",
         "symptoms": [
-          "Fatigue",
-          "Weight gain or loss",
-          "Dry skin",
-          "Muscle weakness",
-          "Irregular menstrual periods"
+            "Fatiga",
+            "Aumento o pérdida de peso",
+            "Piel seca",
+            "Debilidad muscular",
+            "Periodos menstruales irregulares"
         ],
         "prevention": [
-          "Eat a balanced diet",
-          "Exercise regularly",
-          "Get regular check-ups"
+            "Lleva una dieta equilibrada",
+            "Haz ejercicio con regularidad",
+            "Hazte chequeos regulares"
         ],
-        "treatment": "Medication like levothyroxine may be prescribed by a doctor."
+        "treatment": "Un médico puede recetar medicamentos como la levotiroxina."
       },
       {
         "name": "Diabetes",
-        "imagesrc":"/imgs/diabeties.jpg",
+        "imagesrc":"./imgs/diabeties.jpg",
         "symptoms": [
-          "Frequent urination",
-          "Increased thirst",
-          "Blurry vision",
-          "Fatigue",
-          "Slow healing of cuts or sores"
+            "Micción frecuente",
+            "Aumento de la sed",
+            "Visión borrosa",
+            "Fatiga",
+            "Cicatrización lenta de cortes o llagas"
         ],
         "prevention": [
-          "Maintain a healthy weight",
-          "Follow a balanced diet",
-          "Regular exercise"
+            "Mantener un peso saludable",
+            "Seguir una dieta equilibrada",
+            "Hacer ejercicio regularmente"
         ],
-        "treatment": "Management includes medication, insulin therapy, and lifestyle changes."
+        "treatment": "El tratamiento incluye medicación, terapia con insulina y cambios en el estilo de vida."
       },
       {
-        "name": "High Blood Pressure",
-        "imagesrc":"/imgs/diabeties.jpg",
+        "name": "Presión Arterial Alta",
+        "imagesrc":"./imgs/blood_pressure.jpg",
         "symptoms": [
-          "Headaches",
-          "Shortness of breath",
-          "Chest pain",
-          "Dizziness",
-          "Blurred or double vision"
+            "Dolores de cabeza",
+            "Dificultad para respirar",
+            "Dolor en el pecho",
+            "Mareos",
+            "Visión borrosa o doble"
         ],
         "prevention": [
-          "Reduce salt intake",
-          "Exercise regularly",
-          "Maintain a healthy weight"
+            "Reducir el consumo de sal",
+            "Hacer ejercicio regularmente",
+            "Mantener un peso saludable"
         ],
-        "treatment": "Medications like ACE inhibitors or diuretics may be prescribed."
+        "treatment": "Se pueden recetar medicamentos como inhibidores de la ECA o diuréticos."
       }
     ]
   }

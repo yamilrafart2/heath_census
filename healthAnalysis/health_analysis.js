@@ -60,25 +60,54 @@ function generateReport() {
         genderConditionsCount[patient.gender][patient.condition]++;
     }
 
-    report.innerHTML = `Number of patients: ${numPatients}<br><br>`;
-    report.innerHTML += `Conditions Breakdown:<br>`;
+    report.innerHTML = `Número de pacientes: ${numPatients}<br><br>`;
+    report.innerHTML += `Desglose de condiciones:<br>`;
     for (const condition in conditionsCount) {
         report.innerHTML += `${condition}: ${conditionsCount[condition]}<br>`;
     }
 
-    report.innerHTML += `<br>Gender-Based Conditions:<br>`;
+    report.innerHTML += `<br>Condiciones basadas en el género:<br>`;
     for (const gender in genderConditionsCount) {
         report.innerHTML += `${gender}:<br>`;
         for (const condition in genderConditionsCount[gender]) {
             report.innerHTML += `&nbsp;&nbsp;${condition}: ${genderConditionsCount[gender][condition]}<br>`;
         }
     }
-    console.log(patients.length);
-    console.log(conditionsCount);
-    console.log(genderConditionsCount);
-    
-    
     
 }
-
 addPatientButton.addEventListener("click", addPatient);
+
+/**
+ * Crear una función para la solicitud de búsqueda
+*/
+function searchCondition() {
+    const input = document.getElementById('conditionInput').value.toLowerCase();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
+
+    fetch('health_analysis.json')
+        .then(response => response.json())
+        .then(data => {
+            const condition = data.conditions.find(item => item.name.toLowerCase() === input);
+
+            if (condition) {
+              const symptoms = condition.symptoms.join(', ');
+              const prevention = condition.prevention.join(', ');
+              const treatment = condition.treatment;
+
+              resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
+              resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
+
+              resultDiv.innerHTML += `<p><strong>Síntomas:</strong> ${symptoms}</p>`;
+              resultDiv.innerHTML += `<p><strong>Prevención:</strong> ${prevention}</p>`;
+              resultDiv.innerHTML += `<p><strong>Tratamiento:</strong> ${treatment}</p>`;
+            } else {
+              resultDiv.innerHTML = 'Condición no encontrada.';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.innerHTML = 'An error occurred while fetching data.';
+        });
+}
+btnSearch.addEventListener('click', searchCondition);
